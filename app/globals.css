@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+.border1px {
+    border: 0.02px solid #ededed3a;
+}
+.border3px {
+    border: 2px solid #b7b6b63f;
+}
+.border1pxBox {
+    border: 0.02px solid #ededed1b;
+    border-radius: 8px;
+}
+.border1pxBoxDark {
+    border: 0.05px solid #aaa9a9d7;
+    border-radius: 6px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+.border-radius {
+    border-radius: 15px;
+}
+.border-radius-btn {
+    border-radius: 10px;
+}
+.HamburgerMenu {
+    display: none;
+}
+.align-items-start {
+    align-items: start;
+}
+.align-items-end {
+    align-items: end;
+}
+.btn {
+    color: #4b6bfb0d;
+}
+
+@media screen and (max-width: 920px) {
+    .navbar {
+        display: none;
+    }
+    .HamburgerMenu {
+        display: block;
+    }
+}
+@media screen and (max-width: 300px) {
+    .smallD {
+        width: 232px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1120px) {
+    .hero-res-mid {
+        max-width: 760px;
+    }
+}
+@media screen and (max-width: 390px) {
+    .hero-res-mid {
+        width: 335px;
+    }
+    .smallD {
+        left: 1.5rem;
+    }
+}
+@media screen and (max-width: 280px) {
+    .hero-res-mid {
+        width: 260px;
+    }
+    .smallD {
+        padding: 10px;
+        left: 1rem;
+    }
+}
