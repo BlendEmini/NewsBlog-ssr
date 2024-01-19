@@ -5,14 +5,14 @@ import Link from "next/link";
 import logo from "../assets/logolight1.png";
 
 const Hero = ({ blogs }) => {
-    console.log(blogs);
     const darkMode = false;
     const singleBlog = blogs[0];
+    console.log(singleBlog);
     return (
         <div className="flex flex-col justify-center align-items-center gap-3">
             <div className="relative gap-11 box-border py-3">
                 <div className="relative cursor-pointer ">
-                    <Link href={`/blog`}>
+                    <Link href={`/${singleBlog.id}`}>
                         <div className="md:w-800 w-96 h-56 hero-res-mid md:h-462 border1px border3px border-radius">
                             <Image
                                 src={singleBlog.image || logo}
@@ -36,7 +36,7 @@ const Hero = ({ blogs }) => {
                                 </h6>
                             </div>
                             <div>
-                                <h2 className="lg:text-3xl text-xl">
+                                <h2 className="lg:text-3xl text-xl fonts-custom">
                                     {singleBlog.title || "TITLE"}
                                 </h2>
                             </div>
