@@ -10,9 +10,9 @@ import Footer from "@/components/Footer";
 export default function Home({ blogs }) {
     return (
         <>
-            <div className="flex flex-col justify-center align-items-center">
-                <HamburgerMenu />
+            <div className="">
                 <Navbar />
+                <HamburgerMenu />
                 <Hero blogs={blogs} />
                 <News blogs={blogs} />
                 <Footer />
