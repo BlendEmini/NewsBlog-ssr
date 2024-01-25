@@ -8,7 +8,10 @@ import News from "@/components/News";
 import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 import img1 from "../assets/logodark1.png";
+
 export default function Home({ blogs }) {
+    const siteUrl = "https://your-website-url.com"; // Replace with your actual website URL
+
     return (
         <>
             <NextSeo
@@ -19,12 +22,16 @@ export default function Home({ blogs }) {
                     description: "AmericanLensNews",
                     images: [
                         {
-                            url: img1,
+                            url: `${siteUrl}${img1}`, // Use the absolute URL
                             width: 800,
                             height: 600,
                             alt: "Alternative text for the image",
                         },
                     ],
+                    url: siteUrl,
+                    type: "website",
+                    site_name: "AmericanLensNews",
+                    app_id: "Your Facebook App ID", // Replace with your Facebook App ID
                 }}
                 // You can add more meta tags or customize SEO settings here
             />
@@ -38,6 +45,7 @@ export default function Home({ blogs }) {
         </>
     );
 }
+
 export async function getServerSideProps() {
     try {
         // Fetch data from Supabase
