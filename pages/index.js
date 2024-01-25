@@ -6,10 +6,28 @@ import "../app/globals.css";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import News from "@/components/News";
 import Footer from "@/components/Footer";
-
+import { NextSeo } from "next-seo";
+import img1 from "../assets/logodark1.png";
 export default function Home({ blogs }) {
     return (
         <>
+            <NextSeo
+                title="TESTTESTTEST"
+                description="AmericanLensNews"
+                openGraph={{
+                    title: "TESTTESTTEST",
+                    description: "AmericanLensNews",
+                    images: [
+                        {
+                            url: img1,
+                            width: 800,
+                            height: 600,
+                            alt: "Alternative text for the image",
+                        },
+                    ],
+                }}
+                // You can add more meta tags or customize SEO settings here
+            />
             <div className="">
                 <Navbar />
                 <HamburgerMenu />
