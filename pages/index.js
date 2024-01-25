@@ -31,7 +31,7 @@ export default function Home({ blogs }) {
                     url: siteUrl,
                     type: "website",
                     site_name: "AmericanLensNews",
-                    app_id: "Your Facebook App ID", // Replace with your Facebook App ID
+                    app_id: "61555201085700", // Replace with your Facebook App ID
                 }}
                 // You can add more meta tags or customize SEO settings here
             />
