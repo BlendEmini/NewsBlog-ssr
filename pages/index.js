@@ -22,7 +22,7 @@ export default function Home({ blogs }) {
                     description: "AmericanLensNews",
                     images: [
                         {
-                            url: "https://lqnnbdfzslttudvlrywx.supabase.co/storage/v1/object/public/blogImages/Blogbox9.png", // Use the absolute URL
+                            url: "https://lqnnbdfzslttudvlrywx.supabase.co/storage/v1/object/public/blogImages/Blogbox9.png",
                             width: 800,
                             height: 600,
                             alt: "Alternative text for the image",
@@ -31,9 +31,10 @@ export default function Home({ blogs }) {
                     url: siteUrl,
                     type: "website",
                     site_name: "AmericanLensNews",
-                    app_id: "61555201085700", // Replace with your Facebook App ID
                 }}
-                // You can add more meta tags or customize SEO settings here
+                facebook={{
+                    appId: "61555201085700", // Replace with your Facebook App ID
+                }}
             />
             <div className="">
                 <Navbar />
