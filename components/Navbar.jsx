@@ -33,7 +33,7 @@ const Navbar = () => {
                     Homepage
                 </a>
                 <a
-                    href="/blog/politics"
+                    href="/politics"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}
@@ -41,7 +41,7 @@ const Navbar = () => {
                     Politics
                 </a>
                 <a
-                    href="/blog/sports"
+                    href="/sports"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}
@@ -49,7 +49,7 @@ const Navbar = () => {
                     Sports
                 </a>
                 <a
-                    href="/blog/business"
+                    href="/business"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}
@@ -57,7 +57,7 @@ const Navbar = () => {
                     Business
                 </a>
                 <a
-                    href="/blog/technology"
+                    href="/technology"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}
@@ -65,7 +65,7 @@ const Navbar = () => {
                     Technology
                 </a>
                 <a
-                    href="/blog/health"
+                    href="/health"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}
@@ -73,7 +73,7 @@ const Navbar = () => {
                     Health
                 </a>
                 <a
-                    href="/blog/others"
+                    href="/others"
                     className={`text-lg ${
                         darkMode ? "text-white" : "text-scLightText"
                     }`}

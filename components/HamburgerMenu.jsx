@@ -104,12 +104,12 @@ function HamburgerMenu({ darkMode, setDarkMode }) {
                             <a href="/" className="border-l-4 border-gray-600">
                                 Homepage
                             </a>
-                            <a href="/blog/politics">Politics</a>
-                            <a href="/blog/business">Business</a>
-                            <a href="/blog/health">Health</a>
-                            <a href="/blog/sports">Sports</a>
-                            <a href="/blog/technology">Technology</a>
-                            <a href="/blog/others">Others</a>
+                            <a href="/politics">Politics</a>
+                            <a href="/business">Business</a>
+                            <a href="/health">Health</a>
+                            <a href="/sports">Sports</a>
+                            <a href="/technology">Technology</a>
+                            <a href="/others">Others</a>
                         </div>
                     </div>
                 </div>
