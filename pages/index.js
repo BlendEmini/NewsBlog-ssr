@@ -10,7 +10,7 @@ import { NextSeo } from "next-seo";
 import img1 from "../assets/logodark1.png";
 
 export default function Home({ blogs }) {
-    const siteUrl = "https://your-website-url.com"; // Replace with your actual website URL
+    const siteUrl = "https://news-blog-ssr.vercel.app/"; // Replace with your actual website URL
 
     return (
         <>
