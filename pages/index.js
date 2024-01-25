@@ -22,7 +22,7 @@ export default function Home({ blogs }) {
                     description: "AmericanLensNews",
                     images: [
                         {
-                            url: img1, // Use the absolute URL
+                            url: "https://lqnnbdfzslttudvlrywx.supabase.co/storage/v1/object/public/blogImages/Blogbox9.png", // Use the absolute URL
                             width: 800,
                             height: 600,
                             alt: "Alternative text for the image",
