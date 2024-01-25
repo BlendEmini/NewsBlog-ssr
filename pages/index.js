@@ -22,7 +22,7 @@ export default function Home({ blogs }) {
                     description: "AmericanLensNews",
                     images: [
                         {
-                            url: `${siteUrl}${img1}`, // Use the absolute URL
+                            url: img1, // Use the absolute URL
                             width: 800,
                             height: 600,
                             alt: "Alternative text for the image",
