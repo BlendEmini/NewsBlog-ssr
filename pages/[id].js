@@ -6,19 +6,38 @@ import "../app/globals.css";
 import Navbar from "@/components/Navbar";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import Footer from "@/components/Footer";
-
-export const metadata = {
-    title: "...",
-    description: "...",
-};
+import { NextSeo } from "next-seo";
 
 const Article = ({ post }) => {
+    const siteUrl = "https://news-blog-ssr.vercel.app/";
     const router = useRouter();
     const { id } = router.query;
 
     // Render your article content here
     return (
         <>
+            <NextSeo
+                title={post.title}
+                description="AmericanLensNews"
+                openGraph={{
+                    title: post.title,
+                    description: post.shortdescription,
+                    images: [
+                        {
+                            url: post.image,
+                            width: 800,
+                            height: 600,
+                            alt: "Alternative text for the image",
+                        },
+                    ],
+                    url: siteUrl,
+                    type: "website",
+                    site_name: "AmericanLensNews",
+                }}
+                facebook={{
+                    appId: "61555201085700", // Replace with your Facebook App ID
+                }}
+            />
             <Navbar />
             <HamburgerMenu />
             <SingleViewPage singleBlogData={post} />
