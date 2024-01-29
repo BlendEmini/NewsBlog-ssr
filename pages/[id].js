@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 
 const Article = ({ post }) => {
-    const siteUrl = "https://news-blog-ssr.vercel.app/";
+    const siteUrl = `https://news-blog-ssr.vercel.app/${post.id}`;
     const router = useRouter();
     const { id } = router.query;
 
