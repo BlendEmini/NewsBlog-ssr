@@ -8,41 +8,51 @@ import News from "@/components/News";
 import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 import img1 from "../assets/logodark1.png";
+import configureStore from "@/redux/configureStore";
+import { Provider, useDispatch, useSelector } from "react-redux";
 
 export default function Home({ blogs }) {
-    const siteUrl = `https://news-blog-ssr.vercel.app/`; // Replace with your actual website URL
+    const siteUrl = `https://news-blog-ssr.vercel.app/`;
 
+    const darkMode = useSelector((state) => state.darkMode);
+    const dispatch = useDispatch();
+    const handleDarkModeToggle = () => {
+        dispatch(toggleDarkMode());
+    };
     return (
         <>
-            <NextSeo
-                title="TESTTESTTEST"
-                description="AmericanLensNews"
-                openGraph={{
-                    title: "TESTTESTTEST",
-                    description: "AmericanLensNews",
-                    images: [
-                        {
-                            url: "https://lqnnbdfzslttudvlrywx.supabase.co/storage/v1/object/public/blogImages/Blogbox9.png",
-                            width: 800,
-                            height: 600,
-                            alt: "Alternative text for the image",
-                        },
-                    ],
-                    url: siteUrl,
-                    type: "website",
-                    site_name: "AmericanLensNews",
-                }}
-                facebook={{
-                    appId: "61555201085700", // Replace with your Facebook App ID
-                }}
-            />
-            <div className="">
-                <Navbar />
-                <HamburgerMenu />
-                <Hero blogs={blogs} />
-                <News blogs={blogs} />
-                <Footer />
-            </div>
+            <Provider store={configureStore}>
+                <NextSeo
+                    title="American Lens News"
+                    description="Welcome to American News! Our commitment is to offer dependable and diverse news coverage."
+                    openGraph={{
+                        title: "American Lens News",
+                        description:
+                            "Welcome to American News! Our commitment is to offer dependable and diverse news coverage.",
+                        images: [
+                            {
+                                url: "https://lqnnbdfzslttudvlrywx.supabase.co/storage/v1/object/public/blogImages/Blogbox9.png",
+                                width: 800,
+                                height: 600,
+                                alt: "Alternative text for the image",
+                            },
+                        ],
+                        url: siteUrl,
+                        type: "website",
+                        site_name: "AmericanLensNews",
+                    }}
+                    facebook={{
+                        appId: "61555201085700", // Replace with your Facebook App ID
+                    }}
+                />
+                <div className="">
+                    <Navbar />
+                    <HamburgerMenu />
+                    <Hero blogs={blogs} />
+                    <News blogs={blogs} />
+                    <Footer />
+                </div>
+            </Provider>
         </>
     );
 }
