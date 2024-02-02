@@ -2,9 +2,10 @@ import React from "react";
 import AdsMid from "./AdsMid";
 import CategoryBtn from "./CategoryBtn";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 const SingleViewPage = ({ singleBlogData }) => {
-    const darkMode = false;
+    const darkMode = useSelector((state) => state.darkMode);
     if (!singleBlogData) {
         return <div>Loading...</div>;
     }
@@ -13,7 +14,7 @@ const SingleViewPage = ({ singleBlogData }) => {
         <>
             <div
                 className={`flex box-border align-items-center ${
-                    darkMode ? "bg-mainBgDark" : "bg-white"
+                    darkMode ? "bg-mainBgDark" : "bg-gray-100"
                 } flex-col justify-center`}
             >
                 <AdsMid />
@@ -55,9 +56,9 @@ const SingleViewPage = ({ singleBlogData }) => {
                             <h6
                                 className={` ${
                                     darkMode
-                                        ? "text-darkParagraphColor"
+                                        ? "text-white"
                                         : "text-lightParagraphColor"
-                                } text-sm md:text-base font-normal`}
+                                } text-sm md:text-base font-normal font-family-single`}
                             >
                                 {singleBlogData.shortdescription}
                             </h6>
@@ -65,9 +66,9 @@ const SingleViewPage = ({ singleBlogData }) => {
                             <h6
                                 className={` ${
                                     darkMode
-                                        ? "text-darkParagraphColor"
+                                        ? "text-white"
                                         : "text-lightParagraphColor"
-                                } text-sm md:text-base font-normal`}
+                                } text-sm md:text-base font-normal font-family-single`}
                             >
                                 {singleBlogData.midDescription}
                             </h6>
@@ -75,9 +76,9 @@ const SingleViewPage = ({ singleBlogData }) => {
                             <h6
                                 className={` ${
                                     darkMode
-                                        ? "text-darkParagraphColor"
+                                        ? "text-white"
                                         : "text-lightParagraphColor"
-                                } text-sm md:text-base font-normal`}
+                                } text-sm md:text-base font-normal font-family-single`}
                             >
                                 {singleBlogData.description}
                             </h6>
