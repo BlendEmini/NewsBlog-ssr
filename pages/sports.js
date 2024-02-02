@@ -7,14 +7,18 @@ import "../app/globals.css";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import configureStore from "@/redux/configureStore";
+import { Provider } from "react-redux";
 const TechnologyPage = ({ sportsData }) => {
     return (
-        <div>
-            <Navbar />
-            <HamburgerMenu />
-            <News blogs={sportsData} />
-            <Footer />
-        </div>
+        <Provider store={configureStore}>
+            <div>
+                <Navbar />
+                <HamburgerMenu />
+                <News blogs={sportsData} />
+                <Footer />
+            </div>
+        </Provider>
     );
 };
 

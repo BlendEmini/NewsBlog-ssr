@@ -3,13 +3,21 @@ import Image from "next/image";
 import Ads from "../components/Ads";
 import Link from "next/link";
 import logo from "../assets/logolight1.png";
+import { useSelector } from "react-redux";
 
 const Hero = ({ blogs }) => {
-    const darkMode = false;
+    const darkMode = useSelector((state) => state.darkMode);
+
     const singleBlog = blogs[0];
     console.log(singleBlog);
     return (
-        <div className="flex flex-col justify-center align-items-center gap-3">
+        <div
+            className={`flex  flex-col justify-center align-items-center ${
+                darkMode
+                    ? "bg-mainBgDark text-white "
+                    : "bg-gray-100 text-black shadow-lg "
+            } gap-3`}
+        >
             <div className="relative gap-11 box-border py-3">
                 <div className="relative cursor-pointer ">
                     <Link href={`/${singleBlog.id}`}>

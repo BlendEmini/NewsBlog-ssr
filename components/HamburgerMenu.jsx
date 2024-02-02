@@ -11,11 +11,14 @@ import LogoDark from "../assets/logodark1.png";
 import LogoLight from "../assets/logolight1.png";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import Link from "next/link";
-
-function HamburgerMenu({ darkMode, setDarkMode }) {
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "@/redux/themeColor";
+function HamburgerMenu() {
     const [toggleMenu, setToggleMenu] = useState(false);
-    const toggleMode = () => {
-        setDarkMode(!darkMode);
+    const darkMode = useSelector((state) => state.darkMode);
+    const dispatch = useDispatch();
+    const handleDarkModeToggle = () => {
+        dispatch(toggleDarkMode());
     };
 
     return (
@@ -25,7 +28,7 @@ function HamburgerMenu({ darkMode, setDarkMode }) {
                     className={`max-w-7xl mx-auto ${
                         darkMode
                             ? "bg-mainBgDark text-white"
-                            : "bg-white text-dark"
+                            : "bg-gray-100 text-dark"
                     }`}
                 >
                     <div className="flex mx-auto align-items-center justify-between w-5/6 ">
@@ -74,17 +77,14 @@ function HamburgerMenu({ darkMode, setDarkMode }) {
                                 </button>
                             </div>
                             <button
-                                onClick={toggleMode}
+                                onClick={handleDarkModeToggle}
                                 className={`px-4 py-2 flex-wrap border-radius ${
                                     darkMode
                                         ? "bg-white text-black"
                                         : "bg-mainBgDark text-white"
                                 }`}
                             >
-                                <BsFillMoonStarsFill
-                                    onClick={() => setDarkMode(!darkMode)}
-                                    className="cursor-pointer text-2xl "
-                                />
+                                <BsFillMoonStarsFill className="cursor-pointer text-2xl " />
                             </button>
                         </div>
                     </div>

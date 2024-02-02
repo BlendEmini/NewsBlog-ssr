@@ -9,13 +9,13 @@ const Footer = () => {
                     <div className="w-72 box-border p-4  h-60 flex flex-col align-items-start">
                         <strong>About</strong>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Culpa natus ratione delectus animi itaque
-                            nobis totam.
+                            Welcome to American News! We're dedicated to
+                            providing dependable and diverse news coverage,
+                            ensuring you stay informed.
                         </p>
                         <br></br>
-                        <strong>Email:</strong>
-                        <strong>Phone:</strong>
+                        {/* <strong>Email:</strong>
+                        <strong>Phone:</strong> */}
                     </div>
                     <div className="box-border p-5 flex  flex-col h-60">
                         <strong>Category</strong>

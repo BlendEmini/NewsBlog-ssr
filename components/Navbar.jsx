@@ -4,13 +4,20 @@ import LogoLight from "../assets/logolight1.png";
 import SearchLogo from "../assets/search-outline.png";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "@/redux/themeColor";
 
 const Navbar = () => {
-    const darkMode = false;
+    const darkMode = useSelector((state) => state.darkMode);
+    const dispatch = useDispatch();
+    const handleDarkModeToggle = () => {
+        dispatch(toggleDarkMode());
+    };
+
     return (
         <div
             className={`flex navbar items-center gap-12 justify-center p-7 ${
-                darkMode ? "bg-mainBgDark text-white" : "bg-white text-black"
+                darkMode ? "bg-mainBgDark text-white" : "bg-gray-100 text-black"
             }`}
         >
             <div>
@@ -111,7 +118,7 @@ const Navbar = () => {
             </div>
 
             <button
-                // onClick={toggleMode}
+                onClick={handleDarkModeToggle}
                 className={`px-3 py-1 flex-wrap border-radius ${
                     darkMode
                         ? "bg-white text-black"

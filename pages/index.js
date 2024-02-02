@@ -10,15 +10,13 @@ import { NextSeo } from "next-seo";
 import img1 from "../assets/logodark1.png";
 import configureStore from "@/redux/configureStore";
 import { Provider, useDispatch, useSelector } from "react-redux";
+import { Cookie } from "next/font/google";
+import CookieConsent from "@/components/Cookie";
+import CookieCheck from "@/components/CookieCheck";
 
 export default function Home({ blogs }) {
     const siteUrl = `https://news-blog-ssr.vercel.app/`;
 
-    // const darkMode = useSelector((state) => state.darkMode);
-    // const dispatch = useDispatch();
-    // const handleDarkModeToggle = () => {
-    //     dispatch(toggleDarkMode());
-    // };
     return (
         <>
             <Provider store={configureStore}>
@@ -50,6 +48,8 @@ export default function Home({ blogs }) {
                     <HamburgerMenu />
                     <Hero blogs={blogs} />
                     <News blogs={blogs} />
+                    <CookieConsent />
+                    <CookieCheck />
                     <Footer />
                 </div>
             </Provider>
