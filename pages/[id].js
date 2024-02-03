@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { NextSeo } from "next-seo";
 import { Provider, useSelector } from "react-redux";
 import configureStore from "@/redux/configureStore";
+import AdsWidgetHeader from "@/components/AdsWidgetHeader";
 
 const Article = ({ post }) => {
     const siteUrl = `https://news-blog-ssr.vercel.app/${post.id}`;
@@ -43,6 +44,7 @@ const Article = ({ post }) => {
                 />
                 <Navbar />
                 <HamburgerMenu />
+                <AdsWidgetHeader />
                 <SingleViewPage singleBlogData={post} />
                 <Footer />
             </Provider>

@@ -11,6 +11,7 @@ import img1 from "../assets/logodark1.png";
 import configureStore from "@/redux/configureStore";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { Cookie } from "next/font/google";
+import AdsWidgetHeader from "@/components/AdsWidgetHeader";
 
 export default function Home({ blogs }) {
     const siteUrl = `https://news-blog-ssr.vercel.app/`;
@@ -44,6 +45,7 @@ export default function Home({ blogs }) {
                 <div className="">
                     <Navbar />
                     <HamburgerMenu />
+                    <AdsWidgetHeader />
                     <Hero blogs={blogs} />
                     <News blogs={blogs} />
 

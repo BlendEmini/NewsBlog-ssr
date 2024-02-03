@@ -82,6 +82,7 @@ const SingleViewPage = ({ singleBlogData }) => {
                             >
                                 {singleBlogData.description}
                             </h6>
+                            <br />
                         </div>
                     </div>
                 </div>
