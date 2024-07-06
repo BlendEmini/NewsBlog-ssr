@@ -12,68 +12,68 @@ import configureStore from "@/redux/configureStore";
 import AdsWidgetHeader from "@/components/AdsWidgetHeader";
 
 const Article = ({ post }) => {
-    const siteUrl = `https://news-blog-ssr.vercel.app/${post.id}`;
-    const router = useRouter();
-    const { id } = router.query;
+  const siteUrl = `https://news-blog-ssr.vercel.app/${post.id}`;
+  const router = useRouter();
+  const { id } = router.query;
 
-    // Render your article content here
-    return (
-        <>
-            <Provider store={configureStore}>
-                <NextSeo
-                    title={post.title}
-                    description="AmericanLensNews"
-                    openGraph={{
-                        title: post.title,
-                        description: post.shortdescription,
-                        images: [
-                            {
-                                url: post.image,
-                                width: 800,
-                                height: 600,
-                                alt: "Alternative text for the image",
-                            },
-                        ],
-                        url: siteUrl,
-                        type: "website",
-                        site_name: "AmericanLensNews",
-                    }}
-                    facebook={{
-                        appId: "61555201085700", // Replace with your Facebook App ID
-                    }}
-                />
-                <Navbar />
-                <HamburgerMenu />
-                <AdsWidgetHeader />
-                <SingleViewPage singleBlogData={post} />
-                <Footer />
-            </Provider>
-        </>
-    );
+  // Render your article content here
+  return (
+    <>
+      <Provider store={configureStore}>
+        <NextSeo
+          title={post.title}
+          description="AmericanLensNews"
+          openGraph={{
+            title: post.title,
+
+            images: [
+              {
+                url: post.image,
+                width: 800,
+                height: 600,
+                alt: "Alternative text for the image",
+              },
+            ],
+            url: siteUrl,
+            type: "website",
+            site_name: "AmericanLensNews",
+          }}
+          facebook={{
+            appId: "61555201085700", // Replace with your Facebook App ID
+          }}
+        />
+        <Navbar />
+        <HamburgerMenu />
+        <AdsWidgetHeader />
+        <SingleViewPage singleBlogData={post} />
+        <Footer />
+      </Provider>
+    </>
+  );
 };
 
 export async function getServerSideProps({ params }) {
-    const { id } = params;
+  const { id } = params;
 
-    // Fetch data from Supabase based on the article ID
-    const { data: post, error } = await supabase
-        .from("news")
-        .select("*")
-        .eq("id", id)
-        .single();
+  // Fetch data from Supabase based on the article ID
+  const { data: post, error } = await supabase
+    .from("news")
+    .select("*")
+    .eq("id", id)
+    .single();
 
-    // If the article is not found, handle it by redirecting to a 404 page
-    if (!post) {
-        return {
-            notFound: true,
-        };
-    }
-
+  // If the article is not found, handle it by redirecting to a 404 page
+  if (!post) {
     return {
-        props: {
-            post,
-        },
+      notFound: true,
     };
+  }
+
+  return {
+    props: {
+      post,
+    },
+  };
 }
 
 export default Article;
