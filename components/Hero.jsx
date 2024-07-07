@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Ads from "../components/Ads";
+
 import Link from "next/link";
 import logo from "../assets/logolight1.png";
 import { useSelector } from "react-redux";
@@ -60,7 +60,7 @@ const Hero = ({ blogs }) => {
           </Link>
         </div>
       </div>
-      <Ads />
+
       <h5 className="font-bold mt-6">LATEST NEWS</h5>
     </div>
   );
